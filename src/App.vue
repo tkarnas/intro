@@ -1,17 +1,25 @@
 <template>
   <div id="app">
     <Intro class="intro" />
+    <Home id="home" />
+    <About id="about" />
   </div>
 </template>
 
 <script>
 import Intro from "./components/Intro.vue";
+import Home from "./components/Home.vue";
+import About from "./components/About.vue";
 
 export default {
   name: "App",
   components: {
-    Intro
-  }
+    Intro,
+    Home,
+    About,
+  },
+  data: () => {},
+  methods() {},
 };
 </script>
 
@@ -31,7 +39,12 @@ export default {
   box-sizing: border-box;
 }
 .intro {
-  position: absolute;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 99;
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -39,7 +52,18 @@ export default {
   justify-content: center;
   align-items: center;
   font-size: 2rem;
-  background: #2c3e50;
-  color: antiquewhite;
+  background: rgb(26, 26, 26);
+  color: tomato;
+  animation: slide 1s linear forwards;
+  animation-delay: 8s;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 </style>

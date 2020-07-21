@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <div class="intro-container">
     <div class="name">
-      <h2>{{string}}</h2>
-      <h1>{{string2}}</h1>
+      <h2>{{ string }}</h2>
+      <h1>{{ string2 }}</h1>
     </div>
     <div class="introMessage2">
-      <p class="introMessage">{{message}}</p>
-      <p class="introMessage">{{message2}}</p>
+      <p class="introMessage">{{ message }}</p>
+      <p class="introMessage">{{ message2 }}</p>
     </div>
   </div>
 </template>
@@ -24,7 +24,7 @@ export default {
       string: "", // here your string will be stored,
       string2: "",
       message: "",
-      message2: ""
+      message2: "",
     };
   },
   methods: {
@@ -85,14 +85,14 @@ export default {
           }
         }, 100); // interval duration, 1s
       }, 5900);
-    }
+    },
   },
   mounted() {
     this.appendFirstName(); // invoke function when ready
     this.appendLastName(); // invoke function when ready
     this.appendMsg();
     this.appendMsg2();
-  }
+  },
 };
 </script>
 
@@ -109,5 +109,8 @@ export default {
 h2 {
   margin-bottom: 1.6rem;
 }
+.intro-container {
+  height: 100vh;
+  width: 100vw;
+}
 </style>
-
