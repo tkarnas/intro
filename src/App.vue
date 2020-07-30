@@ -1,29 +1,36 @@
 <template>
   <div id="app">
     <Intro class="intro" />
-    <Home id="home" />
-    <About id="about" />
+    <Slide>
+      <router-link :to="'/'"><span>Home</span></router-link>
+      <router-link :to="'/About'"><span>About</span></router-link>
+    </Slide>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 import Intro from "./components/Intro.vue";
-import Home from "./components/Home.vue";
-import About from "./components/About.vue";
+import { Slide } from "vue-burger-menu";
 
 export default {
   name: "App",
   components: {
     Intro,
-    Home,
-    About,
+    Slide,
   },
-  data: () => {},
-  methods() {},
+  data: () => {
+    return {
+      display: "none",
+    };
+  },
+  methods: {},
 };
 </script>
 
 <style>
+@import "https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap";
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -57,6 +64,33 @@ export default {
   animation: slide 1s linear forwards;
   animation-delay: 8s;
 }
+.bm-burger-bars {
+  background-color: tomato;
+  animation: burger 9s linear forwards;
+}
+
+.bm-menu {
+  background-color: tomato;
+}
+
+.bm-item-list > * > span {
+  color: black;
+}
+
+@keyframes burger {
+  0% {
+    scale: 0%;
+    opacity: 0;
+  }
+  90% {
+    scale: 0%;
+    opacity: 0;
+  }
+  100% {
+    scale: 100%;
+    opacity: 1;
+  }
+}
 
 @keyframes slide {
   0% {
@@ -64,6 +98,7 @@ export default {
   }
   100% {
     transform: translateX(-100%);
+    display: none;
   }
 }
 </style>
