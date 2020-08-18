@@ -1,23 +1,16 @@
 <template>
   <div id="app">
     <Intro class="intro" />
-    <Slide>
-      <router-link :to="'/'"><span>Home</span></router-link>
-      <router-link :to="'/About'"><span>About</span></router-link>
-    </Slide>
-    <router-view></router-view>
   </div>
 </template>
 
 <script>
 import Intro from "./components/Intro.vue";
-import { Slide } from "vue-burger-menu";
 
 export default {
   name: "App",
   components: {
     Intro,
-    Slide,
   },
   data: () => {
     return {
@@ -62,19 +55,50 @@ export default {
   background: rgb(26, 26, 26);
   color: tomato;
   animation: slide 1s linear forwards;
-  animation-delay: 8s;
+  animation-delay: 4s;
 }
 .bm-burger-bars {
   background-color: tomato;
-  animation: burger 9s linear forwards;
+  animation: burger 5s linear forwards;
 }
 
 .bm-menu {
-  background-color: tomato;
+  background-color: rgb(68, 68, 68);
 }
 
 .bm-item-list > * > span {
-  color: black;
+  color: tomato;
+}
+header {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  align-items: center;
+  height: 5vh;
+}
+.nav {
+  flex: 1;
+  background: greenyellow;
+}
+
+.nav__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav__item {
+  margin: 0 2rem;
+}
+
+.logo {
+  display: flex;
+  background: cornflowerblue;
+}
+
+.logo img {
+  display: block;
+  height: 3vh;
 }
 
 @keyframes burger {

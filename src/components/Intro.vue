@@ -21,14 +21,14 @@ export default {
       array2: ["K", "A", "R", "N", "A", "S"],
       array3: ["f", "r", "o", "n", "t", "-", "e", "n", "d"],
       array4: ["d", "e", "v", "e", "l", "o", "p", "e", "r"],
-      string: "", // here your string will be stored,
+      string: "",
       string2: "",
       message: "",
       message2: "",
     };
   },
   methods: {
-    appendFirstName: function() {
+    appendFirstName: function () {
       const it = this.array[Symbol.iterator](); // convenient for yeilding values
       const int = setInterval(() => {
         // time interval
@@ -39,9 +39,9 @@ export default {
         } else {
           clearInterval(int); // when done - clear interval
         }
-      }, 300); // interval duration, 1s
+      }, 150); // interval duration,
     },
-    appendLastName: function() {
+    appendLastName: function () {
       setTimeout(() => {
         const it = this.array2[Symbol.iterator](); // convenient for yeilding values
         const int = setInterval(() => {
@@ -53,10 +53,10 @@ export default {
           } else {
             clearInterval(int); // when done - clear interval
           }
-        }, 400); // interval duration, 1s
-      }, 2400);
+        }, 150); // interval duration, 1s
+      }, 1200);
     },
-    appendMsg: function() {
+    appendMsg: function () {
       setTimeout(() => {
         const it = this.array3[Symbol.iterator](); // convenient for yeilding values
         const int = setInterval(() => {
@@ -69,9 +69,9 @@ export default {
             clearInterval(int); // when done - clear interval
           }
         }, 100); // interval duration, 1s
-      }, 5000);
+      }, 2100);
     },
-    appendMsg2: function() {
+    appendMsg2: function () {
       setTimeout(() => {
         const it = this.array4[Symbol.iterator](); // convenient for yeilding values
         const int = setInterval(() => {
@@ -84,7 +84,7 @@ export default {
             clearInterval(int); // when done - clear interval
           }
         }, 100); // interval duration, 1s
-      }, 5900);
+      }, 3000);
     },
   },
   mounted() {
